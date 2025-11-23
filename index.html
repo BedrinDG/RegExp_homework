@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Works</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<section class="main">
+    <div class="container">
+        <div class="main-logo">
+            <a href="#" class="text-color-default">home<span class="text-color-red">W</span>orks</a>
+        </div>
+        <div class="main-form">
+            <div class="main-form-info">
+                <h2 class="info-title" id="info-title">Get your free account</h2>
+                <p class="info-description">
+                    Try homeWorks BUSINESS free for 15 days. Downgrade to Basic (Free Forever)
+                    anytime.
+                </p>
+            </div>
+            <div class="main-form-inputs">
+                <div class="form-input" id="group-full-name">
+                    <label for="full-name" class="form-inputs-label">Full Name</label>
+                    <input type="text" id="full-name" class="form-inputs-name">
+                    <span class="error"></span>
+                </div>
+                <div class="form-input" id="group-user-name">
+                    <label for="user-name" class="form-inputs-label">Your username</label>
+                    <input type="text" id="user-name" class="form-inputs-name">
+                    <span class="error"></span>
+                </div>
+                <div class="form-input" id="group-mail">
+                    <label for="mail" class="form-inputs-label">E-mail</label>
+                    <input type="text" id="mail" class="form-inputs-name">
+                    <span class="error"></span>
+                </div>
+                <div class="form-input" id="group-password">
+                    <label for="password" class="form-inputs-label">Password</label>
+                    <input type="password" id="password" class="form-inputs-name">
+                    <span class="error"></span>
+                </div>
+                <div class="form-input" id="group-rep-password">
+                    <label for="rep-password" class="form-inputs-label">Repeat Password</label>
+                    <input type="password" id="rep-password" class="form-inputs-name">
+                    <span class="error"></span>
+                </div>
+            </div>
+            <div class="main-form-checkbox" id="group-privacy">
+                <div class="group-privacy-input">
+                    <input type="checkbox" id="privacy">
+                    <label for="privacy">
+                        Agree to our Terms of Service and Privacy Statement
+                    </label>
+                </div>
+                <span class="error"></span>
+            </div>
+            <div class="form-actions">
+                <button class="button form-button" id="button">Sign Up</button>
+            </div>
+            <div class="main-form-account" id="form-account">
+                <a href="#" id="account">Already have an account?</a>
+            </div>
+        </div>
+        <div class="main-image">
+            <img src="images/mainImage.png" alt="Ракета">
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-main">
+            <div class="popup-main-text">
+                На вашу почту выслана ссылка, перейдите по ней, чтобы завершить регистрацию
+            </div>
+            <div class="popup-action">
+                <button class="button popup-main-button" id="popup-button">OK</button>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+@font-face {
+    font-family: 'NunitoBlack';
+    src: url("../fonts/Nunito-Black.ttf");
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    font-family: 'NunitoBold', sans-serif;
+    font-size: 0;
+}
+
+.main {
+    position: relative;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    padding: 194px 46px 191px 63px;
+    align-items: center;
+}
+
+.main-logo {
+    position: absolute;
+    left: 50%;
+    top: 27px;
+    transform: translate(-51.5%, 0);
+    font-family: 'NunitoBlack', sans-serif;
+    text-transform: uppercase;
+}
+
+.text-color-default {
+    color: #000;
+    font-size: 36px;
+    letter-spacing: -0.54px;
+    text-decoration: none;
+}
+
+.text-color-red {
+    color: #8edd5b;
+    font-size: 48px;
+    letter-spacing: -0.72px;
+}
+
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-form-info {
+    margin-bottom: 69px;
+}
+
+.info-title {
+    color: #c31919;
+    font-size: 36px;
+    margin-bottom: 7px;
+}
+
+.info-description {
+    max-width: 496px;
+    color: #136ee6;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.form-input {
+    max-width: 452px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-inputs-label {
+    color: #C6C6C4;
+    font-size: 16px;
+}
+
+.form-inputs-name {
+    color: #323232;
+    font-size: 20px;
+
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    background-color: #FFFFFB;
+    border: 0;
+    border-bottom: 1px solid #C6C6C4;
+    outline: none;
+}
+
+.main-form-checkbox {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.main-form-checkbox label {
+    cursor: pointer;
+    margin-left: 10px;
+    color: #636363;
+    font-size: 16px;
+    line-height: 27px;
+}
+
+.main-form-checkbox input {
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.button {
+    border-radius: 40px;
+    background: #8edd5b;
+    border: none;
+    text-align: center;
+
+    color: #e6d515;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-button {
+    padding: 24px 68px;
+    width: 210px;
+}
+
+.main-form-account {
+    display: flex;
+    margin-top: 44px;
+    justify-content: center;
+}
+
+.main-form-account a {
+    color: #636363;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.main-image img{
+    margin-left: 11px;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(177, 177, 177, 0.89);
+}
+
+.popup-main {
+    border-radius: 40px;
+    width: 386px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #F8F8FA;
+    padding: 23px;
+}
+
+.popup-main-text {
+    color: #636363;
+    font-size: 22px;
+    line-height: 26px;
+    width: 281px;
+    margin-bottom: 50px;
+}
+
+.popup-action {
+    text-align: right;
+}
+
+.popup-main-button {
+    padding: 14px 58px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
