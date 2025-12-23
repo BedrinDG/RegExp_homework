@@ -25,7 +25,7 @@ function signUp() {
         $full_name.next().text(`Заполните поле ${$full_name.prev().text()}`)
         $full_name.css('border-color', 'red');
         hasError = true;
-    } else if (!$full_name.val().match(/^[А-ЯA-Z][а-яa-z]+\s*$/)) {
+    } else if (!$full_name.val().match(/^[А-ЯЁA-Z][а-яёa-z]+\s+[А-ЯЁA-Z][а-яёa-z]+$/)) {
         $full_name.next().text('Поле может содержать только буквы, пробелы. Слова начинаются с заглавной буквы')
         $full_name.css('border-color', 'red');
         hasError = true;
@@ -124,29 +124,22 @@ $popupButton.on('click', function () {
     $('#popup').hide();
 });
 $popupButton.on('click', logInPage);
-$('#account').on('click', logInPage);
+$('#account').on('click.first', logInPage).on('click.second', () => {$(':input').val('');});
 
 function signIn() {
     let hasError = false;
 
-    if ($user_name.val().match(/^\s*$/)) {
-        $user_name.next().text(`Заполните поле ${$user_name.prev().text()}`)
-        $user_name.css('border-color', 'red');
-        hasError = true;
-    } else if (!userIsExists('username', $user_name.val())) {
+    if (!userIsExists('username', $user_name.val())) {
         $user_name.next().text('Такой пользователь не зарегистрирован')
         $user_name.css('border-color', 'red');
         return;
     } else {
         $user_name.next().text('')
         $user_name.css('border-color', '#C6C6C4');
+        isUserLoggedIn = true;
     }
 
-    if ($passwordInput.val().match(/^\s*$/)) {
-        $passwordInput.next().text(`Заполните поле ${$passwordInput.prev().text()}`)
-        $passwordInput.css('border-color', 'red');
-        hasError = true;
-    } else if (!userIsExists('password', $passwordInput.val())) {
+    if (!passwordIsRight('username', $passwordInput.val(), $user_name.val())) {
         $passwordInput.next().text('Неверный пароль')
         $passwordInput.css('border-color', 'red');
         return;
@@ -190,6 +183,22 @@ function userIsExists(key, val) {
         }
     });
 
+    return hasMatch;
+}
+
+function passwordIsRight(key, password, username) {
+    let hasMatch = false;
+    let client = {};
+    $.each(JSON.parse(localStorage.getItem('clients')), function(index, value) {
+        if (value[key] === username) {
+            console.log(value)
+            client = value;
+        }
+    })
+
+    if (client.password === password) {
+        hasMatch = true;
+    }
     return hasMatch;
 }
 
